@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <title>Task-1</title>
+    <style>
+        body{
+            background-color: lightslategray;
+        }
+        #pics{
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        #pics img{
+            position: absolute;
+            width:100%;
+            height: 100%;
+            z-index: 1;
+        }
+        #pics img:active{
+            z-index: 2;
+        }
+        .Btn{
+            position: absolute;
+            top: 350px;
+            left: 100px;
+           
+        }
+    </style>
+</head>
+<body>
+    
+        <div id="pics" class="images">
+            <img src="./imgs/image6.png" class="active">
+            <img src="./imgs/image7.png">
+            <img src="./imgs/image5.png">
+        </div>
+        <button class="Btn" type="button">STOP</button>
+
+
+    <script>
+        function fadeImag(){
+            var $active = $('#pics .active');
+            var $next = ($('#pics .active').next().length > 0) 
+            ? $('#pics .active').next(): $('#pics img:first');
+            $active.fadeOut(function(){
+                $active.removeClass('active');
+                $next.fadeIn().addClass('active');
+            });
+        }
+        var stop = setInterval('fadeImag()',1000);
+        $(".Btn").on("click",function(){
+            clearInterval(stop);
+        })
+
+
+    </script>
+</body>
+</html>

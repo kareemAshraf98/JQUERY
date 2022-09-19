@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <title>Task-2</title>
+    <style>
+        .div{
+            width: 100px;
+            height: 100px;
+        }
+        .parent{
+            display: flex;
+            gap: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <dive class="div">
+            <img class="img" src="./imgs/image5.png">
+            <center><h3>P1</h3></center>
+            <p class="slide1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Molestiae sunt harum nisi laudantium velit magni, 
+                id officiis error voluptatibus necessitatibus quo obcaecati facilis debitis eum assumenda consequuntur est saepe sit.
+            </p>
+        </dive>
+        <div class="div">
+            <img class="img2" src="./imgs/image6.png" alt="">
+            <center><h3>P2</h3></center>
+            <p class="slide2">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Asperiores dignissimos, unde dolores placeat libero molestias officiis sed dolorum quasi, 
+                ut enim nulla est corporis? Corrupti architecto vel similique id libero.
+            </p>
+        </div>
+        <div class="div">
+            <img class="img3" src="./imgs/image7.png" alt="">
+            <center><h3>P3</h3></center>
+            <p class="slide3">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Corrupti tenetur neque quidem dignissimos, 
+                autem similique possimus consequuntur officia magnam ad laudantium, 
+                eveniet quisquam minima officiis fuga nisi! Vel, veritatis eius!
+            </p>
+        </div>
+    </div>
+    <script>
+        $(function (){
+            $(".img").on("click", function (){
+                $(".slide1").slideToggle(1500);
+            });
+        });
+        $(function (){
+            $(".img2").on("click", function (){
+                $(".slide2").slideToggle(1500);
+            });
+        });
+        $(function (){
+            $(".img3").on("click", function (){
+                $(".slide3").slideToggle(1500);
+            });
+        });
+    </script>
+</body>
+</html>
